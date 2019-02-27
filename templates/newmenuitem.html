@@ -1,0 +1,64 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+	<div class="row divider">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h1>New Menu Item</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="#" method = "post">  
+				<div class="form-group">
+					<label for="name"><font color="#800000">Name:</font></label>
+					<input type ="text" maxlength="50" class="form-control" name="name" id="name"placeholder=" Enter Name of the Item" value="" required="required" data-error="Please enter Item name.">
+
+					<label for="description"><font color="#800000">Description:</font></label>
+					<textarea class="form-control" maxlength="250" rows="3" name="description" id="description" placeholder="Enter description of the Item" value="" required="required" data-error="Please enter description of the Item"></textarea>
+
+					<label for="price"><font color="#800000">Price:</font></label>
+					<div class="input-group">
+						<div class="input-group-addon">$</div>
+						<input type ="text" class="form-control" maxlength="10" name="price" id="price" placeholder="Price in $" value="" required="required" data-error="Please enter price of the Item">
+					</div>
+					<div class="form-group">
+                <label for="picture"><font color="#800000">Picture URL:</font></label>
+                <input type ="URL" class="form-control" id="picture" maxlength="250" name="picture" placeholder="http://www.example.com" value="" required="required" data-error="Please give url for Item">
+                
+            </div>    
+
+					<label for="variety"><font color="#800000">Variety:</font></label>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="variety" id="variety1" value="Coffee" required>Coffees
+					  </label>
+					</div>
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="variety" id="variety2" value="Icecream" required>Ice Creams
+					  </label>
+					</div>    
+					<div class="radio">
+					  <label>
+					    <input type="radio" name="variety" id="variety3" value="Cooldrink" required>Cool Drinks
+					  </label>   
+					</div>
+					
+					<button type="submit" class="btn btn-success" id="submit" type="submit">
+					<span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Create</font></button>
+					<a href = '{{url_for('showMenu', coffeeshop_id = coffeeshop_id)}}'>
+						<button type="submit" class="btn btn-danger" id="submit" type="submit">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancel</button>
+					</a>     
+				</div>
+			</form>       
+			
+		</div>
+	</div>
+{% endblock %}   
+
+ 
